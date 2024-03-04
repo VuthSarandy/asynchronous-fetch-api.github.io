@@ -1,8 +1,9 @@
 import { cardProduct } from "../component/CardProduct.js";
+import { cardUser } from "../component/CardUser.js";
 import { fetchData } from "../store/fetchApi.js";
 
 const query = document.querySelector("#itemPro");
-const userQuery = query.querySelector("#itemUser");
+const userQuery = document.querySelector("#itemUser");
 
 const dataProduct = await fetchData("products");
 const dataUser = await fetchData("users");
@@ -12,7 +13,7 @@ dataProduct.map((e) => {
 })
 
 dataUser.map((u)=>{
-    userQuery.innerHTML += cardProduct(u);
+    userQuery.innerHTML += cardUser(u);
 })
 
 
